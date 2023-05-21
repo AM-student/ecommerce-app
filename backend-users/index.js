@@ -3,17 +3,15 @@ import mongoose from 'mongoose';
 
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import productRoutes from './routes/productRoutes.js';
-import categoryRoutes from './routes/categoryRoutes.js';
-import stockRoutes from './routes/stockRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import roleRoutes from './routes/roleRoutes.js';
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/api', productRoutes);
-app.use('/api', categoryRoutes);
-app.use('/api', stockRoutes);
+app.use('/api', userRoutes);
+app.use('/api', roleRoutes);
 
 mongoose.connect('mongodb://localhost:27017/ecommdb', {
   useNewUrlParser: true,
